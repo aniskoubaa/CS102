@@ -65,7 +65,7 @@ public class ArraysTest {
         for (int i=0;i<2;i++){
             System.out.println("Enter a value: ");
             //String s = input.next();
-            //stringList.add("CS");
+            //stringList.add(s);
             System.out.println("stringList Size: "+ stringList.size());
             System.out.println("stringList: "+ stringList);
     
