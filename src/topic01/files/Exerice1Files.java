@@ -25,6 +25,36 @@ import java.util.Scanner;
 public class Exerice1Files {
     
     public static void main(String[]args){
+        String fileName = "files/students.txt";
+        File file = new File(fileName);
+        
+        Scanner scanner=null;
+        try{
+             scanner = new Scanner(file);
+        }catch(FileNotFoundException e){
+            System.out.println("File Not Found!");
+            //System.exit(status);\
+            return;
+        }
+        
+       ArrayList<String> phones = new ArrayList<String>();
+        while (scanner.hasNextLine()){
+            String line = scanner.nextLine();
+            String [] splittedString = line.split(":");
+            System.out.println("ID = "+splittedString[0]);
+            System.out.println("First Name = "+splittedString[1]);
+            System.out.println("Last Name = "+splittedString[2]);
+            System.out.println("Phone = "+splittedString[3]);
+            System.out.print("Courses = ");
+            phones.add(splittedString[3]);
+            for (int i=4;i<splittedString.length;i++){
+                System.out.print(splittedString[i]+", ");
+            }
+            System.out.println("\n");
+        }
+        
+        System.out.println("Phones Length: "+phones.size());
+        System.out.println("Phones: "+ phones);
         
         
     }    
