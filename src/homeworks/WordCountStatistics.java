@@ -13,6 +13,7 @@
  *     the most frequent word is ???? with ??? occurrences
  *     the less frequent word is ???? with ??? occurrences
  *     the total number of words is ????
+ *     list of 10 most frequent words
  * Hint: you can think of a structure of two dimensions: 
  * one to store words and one to store their occurences
  */
@@ -41,6 +42,7 @@ public class WordCountStatistics {
         lessFrequentWord, numberOfOccurenceOfLessFrequentWord);
         System.out.printf("the total number of words is %d\n",
                 totalNumberofWord);
+        System.out.printf("the list of the 10 most frequent words is: \n");
         
     }
     
