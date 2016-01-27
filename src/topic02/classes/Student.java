@@ -11,11 +11,12 @@ package topic02.classes;
 public class Student {
     
     /* define the attributes or instance variables of  the class */
-    String firstName;
-    String lastName;
-    String phone;
-    double gpa;
-    String address;
+    //access specifier: public or private - by default public
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private double gpa;
+    private String address;
     
     
     /*
@@ -30,12 +31,66 @@ public class Student {
     }
     
     public Student(String fn, String ln, String ph, double GPA, String addr){
-        firstName = fn;
-        lastName = ln;
-        phone = ph;
-        gpa = GPA;
-        address = addr;
+        //firstName = fn;
+        //lastName = ln;
+        //phone = ph;
+        //gpa = GPA;
+        //address = addr;
         
+        setFirstName(fn);
+        setLastName(ln);
+        setPhone(ph);
+        setGpa(GPA);
+        setAddress(addr);
+    }
+    
+    public String getPhone(){
+        return phone;
+    }
+    
+    public void setPhone(String ph){
+        //data validation
+        if (ph.startsWith("05")&&(ph.length()==10))
+            phone = ph;
+        else throw new IllegalArgumentException ("Wrong Phone Number");
+    }
+    
+    
+    public String getFirstName(){
+        return firstName;
+    }
+    
+    public String getLastName(){
+        return lastName;
+    }    
+    
+    public double getGpa(){
+        return gpa;
+    }
+    
+    public String getAddress(){
+        return address;
+    }
+    
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    
+    public void setGpa(double GPA){
+        if ((GPA>=0.0)&&(GPA<=4.0)){
+            gpa= GPA;
+        }
+        else{
+            System.out.println("GPA value is not valid!");
+        }
+    }
+    
+    public void setAddress(String addr){
+        address = addr;
     }
     
     public void printInfo(){

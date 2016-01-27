@@ -16,9 +16,9 @@ public class StudentTest {
         
         //new Student(): creates a new object in the memory
         Student student1 = new Student("Mohamed", "Ali",
-        "050102030405", 3.3, "Riyadh");
+        "0501020304", 3.3, "Riyadh");
         Student student2 = new Student("Ahmed", "Mounir", 
-        "051122334454", 3.45, "Riyadh");
+        "0511223344", 3.45, "Riyadh");
         
         //student1.printInfo();
         //student2.printInfo();
@@ -37,12 +37,19 @@ public class StudentTest {
         }
         
         /* not longer needed */
-        //student1.firstName = "Mohsen";
-        //student1.lastName = "Ali";
-        //student1.phone = "050102030405";
-        //student1.GPA = 3.3;
+        //student1.firstName = "Kamel";
+        //student1.lastName = "Anis";
+        //student1.phone = "t253usi93";
+        try{
+        student1.setPhone("0501020304");
+        }catch (IllegalArgumentException e){
+            System.out.println("Wrong Phone Number. The program will exit");
+        }
+//student1.gpa = 3.5;
         //student1.address = "Riyadh";
         
+        
+        System.out.println("Student1 Phone: "+ student1.getPhone());
         /* not longer needed */
         //student2.firstName = "Ahmed";
         //student2.lastName = "Mounir";
