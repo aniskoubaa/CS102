@@ -13,12 +13,24 @@ public class StudentTest {
     public static void main(String []args){
         
         ArrayList<Student> studentList = new ArrayList<Student>();
-        
+        System.out.println(Student.getCount());
         //new Student(): creates a new object in the memory
         Student student1 = new Student("Mohamed", "Ali",
         "0501020304", 3.3, "Riyadh");
+        //System.out.println(student1.count);
+        System.out.println(Student.getCount());
         Student student2 = new Student("Ahmed", "Mounir", 
         "0511223344", 3.45, "Riyadh");
+        
+        //System.out.println(student1.count);
+        //System.out.println(student2.count);
+        System.out.println(Student.getCount());
+        
+        Student student3 = new Student("Ahmed", "Mounir", 
+        "0511223344", 3.45, "Riyadh");
+        
+        
+        System.out.println(Student.getCount());
         
         //student1.printInfo();
         //student2.printInfo();

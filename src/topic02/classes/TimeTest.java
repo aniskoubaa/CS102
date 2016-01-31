@@ -1,0 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package topic02.classes;
+
+/**
+ *
+ * @author akoubaa
+ */
+public class TimeTest {
+    public static void main(String[]args){
+        
+        Time t1 = new Time(8,41,0);
+        System.out.println(t1.toUniversalString());
+        System.out.println(t1.toStandardString());
+
+        Time t2 = new Time();
+        System.out.println(t2.toStandardString());
+        System.out.println(t2.toUniversalString());
+        
+        Time t3 = new Time (t2);
+    
+    }
+    
+}
