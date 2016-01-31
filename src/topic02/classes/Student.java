@@ -18,7 +18,8 @@ public class Student {
     private double gpa;
     private String address;
     
-    private static int count=0;
+    private static int count =0;
+    
     
     /*
      * 1- it has the same name of the class
@@ -28,7 +29,7 @@ public class Student {
     
     /* default constructor */
     public Student(){
-       count++; 
+       count++;
     }
     
     public Student(String fn, String ln, String ph, double GPA, String addr){
@@ -37,7 +38,7 @@ public class Student {
         //phone = ph;
         //gpa = GPA;
         //address = addr;
-        count++;
+       count++;
         setFirstName(fn);
         setLastName(ln);
         setPhone(ph);
@@ -45,14 +46,15 @@ public class Student {
         setAddress(addr);
     }
     
-    public String getPhone(){
-        return phone;
-    }
-    
     public static int getCount(){
         return count;
     }
     
+    public String getPhone(){
+        return phone;
+    }
+    
+   
     public void setPhone(String ph){
         //data validation
         if (ph.startsWith("05")&&(ph.length()==10))

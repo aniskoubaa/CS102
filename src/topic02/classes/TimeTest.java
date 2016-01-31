@@ -12,15 +12,17 @@ package topic02.classes;
 public class TimeTest {
     public static void main(String[]args){
         
-        Time t1 = new Time(8,41,0);
-        System.out.println(t1.toUniversalString());
-        System.out.println(t1.toStandardString());
-
-        Time t2 = new Time();
-        System.out.println(t2.toStandardString());
-        System.out.println(t2.toUniversalString());
+        Time t1 = new Time(13,3,0);
+        System.out.println("t1= "+t1.toStandardString());
+        System.out.println("t1= "+t1.toUniversalString());
         
-        Time t3 = new Time (t2);
+        Time t2 = new Time();
+        
+        Time t3 = new Time(3);
+        
+        Time t4 = new Time(t1);
+        
+        System.out.println("t4= "+ t4.toStandardString());
     
     }
     

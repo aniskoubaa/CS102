@@ -6,39 +6,31 @@ public class Time {
     private int minute;//0-59
     private int second;//0-59
     
-    
     public Time(int hour, int minute, int second){
         setHour(hour);
         setMinute(minute);
         setSecond(second);
-        
     }
     
     public Time(){
-        //this.hour=0;
-        //setHour(0);
-        //setMinute(0);
-        //setSecond(0);
-        this(0,0,0);
-    }
-    
-    public Time(int hour){
-        this(hour, 0, 0);  
+        this(0,0, 0);        
     }
     
     public Time(int hour, int minute){
-         this(hour,minute, 0);
-    }
-    
-    //copy constructor
-    public Time(Time t){
-        //this.hour = t.hour;
-        //this.minute = t.minute;
-        //this.second = t.second;
-        this(t.getHour(), t.minute, t.second);
+        this(hour, minute,0);
         
     }
     
+    public Time(int hour){
+        this(hour,0,0);
+    }
+    //copy a constructor: it allows to copy an object in another one
+    public Time(Time t){
+        //hour= t.getHour();
+        //this.minute = t.minute;
+        //this.second = t.second;
+        this(t.getHour(), t.getMinute(), t.getSecond());
+    }
     
     public int getHour(){
         return hour;
@@ -54,21 +46,21 @@ public class Time {
     
     public void setHour(int hour){
         if ((hour>=0)&&(hour<24)){
-            this.hour = hour;
+            this.hour=hour;
         }else
             throw new IllegalArgumentException("Hour format is not correct");
     }
     
     public void setMinute(int minute){
         if ((minute>=0)&&(minute<60)){
-            this.minute = minute;
+            this.minute=minute;
         }else
             throw new IllegalArgumentException("Minute format is not correct");
     }
     
     public void setSecond(int second){
         if ((second>=0)&&(second<60)){
-            this.second = second;
+            this.second=second;
         }else
             throw new IllegalArgumentException("Second format is not correct");
     }
@@ -94,6 +86,4 @@ public class Time {
         }
         return String.format("%d:%02d:%02d %s", h, minute, second, AM_PM);
     }
-    
-    
 }
