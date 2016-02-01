@@ -18,6 +18,9 @@ public class Student {
     private double gpa;
     private String address;
     
+    private Date birthDate;
+    
+   
     private static int count =0;
     
     
@@ -32,7 +35,8 @@ public class Student {
        count++;
     }
     
-    public Student(String fn, String ln, String ph, double GPA, String addr){
+    public Student(String fn, String ln, String ph, 
+            double GPA, String addr, Date bd){
         //firstName = fn;
         //lastName = ln;
         //phone = ph;
@@ -44,11 +48,22 @@ public class Student {
         setPhone(ph);
         setGpa(GPA);
         setAddress(addr);
+        setBirthDate(bd);
+
+    }
+    
+    public Date getBirthDate(){
+        return birthDate;
+    }
+    
+    public void setBirthDate(Date birthDate){
+        this.birthDate = birthDate;
     }
     
     public static int getCount(){
         return count;
     }
+    
     
     public String getPhone(){
         return phone;
@@ -113,6 +128,12 @@ public class Student {
     public void printGPA(){
         System.out.println("gpa       : "+gpa);
         System.out.println("");
+    }
+    
+    public String toString(){
+        return String.format("%s %s {%s}", 
+                this.getFirstName(), this.getLastName(),
+                this.getPhone());
     }
     
     

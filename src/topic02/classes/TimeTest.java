@@ -23,6 +23,11 @@ public class TimeTest {
         Time t4 = new Time(t1);
         
         System.out.println("t4= "+ t4.toStandardString());
+        
+        System.out.println("t1= "+t1.toString());
+        System.out.println("t2= "+t2);
+        System.out.println("t3= "+t3);
+        System.out.println("t4= "+t4);
     
     }
     

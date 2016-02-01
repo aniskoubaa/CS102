@@ -7,13 +7,13 @@ public class Time {
     private int second;//0-59
     
     public Time(int hour, int minute, int second){
-        setHour(hour);
+        this.setHour(hour);
         setMinute(minute);
         setSecond(second);
     }
     
     public Time(){
-        this(0,0, 0);        
+        this(0,0,0);        
     }
     
     public Time(int hour, int minute){
@@ -24,6 +24,8 @@ public class Time {
     public Time(int hour){
         this(hour,0,0);
     }
+    
+    
     //copy a constructor: it allows to copy an object in another one
     public Time(Time t){
         //hour= t.getHour();
@@ -86,4 +88,9 @@ public class Time {
         }
         return String.format("%d:%02d:%02d %s", h, minute, second, AM_PM);
     }
+    
+    public String toString(){
+        return String.format("%02d:%02d:%02d", hour, minute, second);
+    }
+    
 }
