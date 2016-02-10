@@ -7,7 +7,8 @@ public class CommissionEmployee {
     private double grossSales;
     private double commissionRate;
     
-    public CommissionEmployee(String first, String last, String ssn, double sales, double rate ){
+    public CommissionEmployee(String first, String last, 
+            String ssn, double sales, double rate ){
         firstName = first;
         lastName = last;
         Ssn = ssn;
@@ -55,7 +56,7 @@ public class CommissionEmployee {
     }
     
     public void setCommissionRate(double rate){
-        if ((rate>=0.0)&&(rate<1.0))
+        if ((rate>=0.2)&&(rate<1.0))
             commissionRate = rate;
         else
             throw new IllegalArgumentException("Commission rate must in >=0.0 and <1.0");
@@ -70,7 +71,8 @@ public class CommissionEmployee {
         return String.format("commission employee: %s %s\n"
                 + "social security number: %s \n"
                 + "gross sales: %.2f \n"
-                + "commission rate: %.2f", firstName, lastName, Ssn, 
+                + "commission rate: %.2f", firstName, 
+                lastName, Ssn, 
                 grossSales, commissionRate);
     }
     

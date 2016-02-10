@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package topic03.inheritance.withoutinheritance;
+package topic03.inheritance.usinginheritance;
+
 
 public class EmployeeTest {
     public static void main(String [] args){

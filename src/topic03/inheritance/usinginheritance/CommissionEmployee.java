@@ -1,34 +1,18 @@
-package topic03.inheritance.withoutinheritance;
+package topic03.inheritance.usinginheritance;
 
-public class BasePlusCommissionEmployee {
+public class CommissionEmployee{
     private String firstName;
     private String lastName;
     private String Ssn;
     private double grossSales;
     private double commissionRate;
     
-    private double baseSalary; //base salary per week
-    
-    public BasePlusCommissionEmployee(String first, String last, 
-            String ssn, double sales, double rate, 
-            double salary){
+    public CommissionEmployee(String first, String last, String ssn, double sales, double rate ){
         firstName = first;
         lastName = last;
         Ssn = ssn;
         setGrossSales(sales); //we have to perform data validation
         setCommissionRate(rate);//we have to perform data validation
-        setBaseSalary(salary);
-    }
-    
-    public void setBaseSalary(double baseSalary){
-        if (baseSalary>0.0)
-            this.baseSalary=baseSalary;
-        else
-            this.baseSalary=0.0;
-    }
-    
-    public double getBaseSalary(){
-        return baseSalary;
     }
     
     public String getFirstName(){
@@ -60,7 +44,7 @@ public class BasePlusCommissionEmployee {
     }
     
     public void setGrossSales(double sales){
-        if (sales>=0.0)
+        if (sales>=0.0)//data validation
             grossSales = sales;
         else
             throw new IllegalArgumentException("Gross sales must be greater than 0.0");
@@ -71,25 +55,26 @@ public class BasePlusCommissionEmployee {
     }
     
     public void setCommissionRate(double rate){
-        if ((rate>=0.2)||(rate<1.0))
+        if ((rate>=0.0)&&(rate<1.0))
             commissionRate = rate;
         else
             throw new IllegalArgumentException("Commission rate must in >=0.0 and <1.0");
     }
     
     public double earning(){
-        return baseSalary+(commissionRate*grossSales);
+        return commissionRate*grossSales;
     }
     
     @Override
     public String toString(){
-        return String.format("base plus commission employee: %s %s\n"
+        return String.format("commission employee: %s %s\n"
                 + "social security number: %s \n"
                 + "gross sales: %.2f \n"
-                + "commission rate: %.2f\n" 
-                + "base salary: %.2f",
-                firstName, lastName, Ssn, 
-                grossSales, commissionRate, baseSalary);
+                + "commission rate: %.2f", firstName, 
+                lastName, Ssn, 
+                grossSales, commissionRate);
     }
+    
+   
     
 }
