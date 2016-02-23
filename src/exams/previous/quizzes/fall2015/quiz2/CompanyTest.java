@@ -15,10 +15,10 @@ public class CompanyTest {
         Department pr = new Department ("Public Relations", "03");
         
         /**TODO: add employees to the employees list**/
-        employees.add(new Employee());
-        employees.add(new Employee());
-        employees.add(new Employee());
-        employees.add(new Employee());
+        //employees.add(new Employee());
+        //employees.add(new Employee());
+        //employees.add(new Employee());
+        //employees.add(new Employee());
         
         System.out.println("Printing Empoloyees:\n "+ employees);
 
@@ -30,7 +30,8 @@ public class CompanyTest {
         
         Manager manager;
         
-        System.out.println("Manager: "+ manager);
+        //System.out.println("Manager: "+ manager);
         
         
     }
+}

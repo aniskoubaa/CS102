@@ -36,18 +36,18 @@ public class EmployeeTest {
         
         
         
-        /*
+       
         
         //downcasting
-        BasePlusCommissionEmployee bpcm = (BasePlusCommissionEmployee) cm2;
+        BasePlusCommissionEmployee bpcm2 = (BasePlusCommissionEmployee) cm2;
 
         
         System.out.println(cm.earning()+"\n");
         System.out.println(cm2);
         System.out.println(bpcm.getBaseSalary());
         
-        */
-        /*Employee sm = 
+       
+        Employee sm = 
                 new SalariedEmployee
                         ("Kamel", "Mounr", "263-39-3344",300);
         
@@ -59,7 +59,7 @@ public class EmployeeTest {
 
         //System.out.println(cm+"\n");
         //System.out.println(bpcm);
-        */
+       
         //int x = 0;
         //double y = (double)x;
         
@@ -71,34 +71,34 @@ public class EmployeeTest {
         //System.out.println("bpcm earning: "+bpcm_cast.earning());
         
         
-        /*
+        
         ArrayList<Employee> employees = new ArrayList<Employee>();
         employees.add(cm);
         employees.add(bpcm);
-        employees.add(cm_cast);
-        employees.add(bpcm_cast);
+        //employees.add(cm_cast);
+        //employees.add(bpcm_cast);
         employees.add(sm);
-        */
+        
         //polymorphic processing
-        //for (int i=0; i<employees.size();i++){
-            /*if (employees.get(i) instanceof CommissionEmployee){
+        for (int i=0; i<employees.size();i++){
+            if (employees.get(i) instanceof CommissionEmployee){
                 CommissionEmployee cme = (CommissionEmployee)employees.get(i);
                 System.out.printf("%.2f\n", cme.earning());
             }else 
                 if (employees.get(i) instanceof BasePlusCommissionEmployee){
                 BasePlusCommissionEmployee cme = (BasePlusCommissionEmployee)employees.get(i);
                 System.out.printf("%.2f\n", cme.earning());
-            }*/
+            }
             
-            //System.out.printf("%.2f\n", employees.get(i).earning());
-            //if (employees.get(i) instanceof SalariedEmployee){
-                //downcasting
-            //    SalariedEmployee sem = (SalariedEmployee)(employees.get(i));
-                //System.out.printf("weekly salary: %.2f\n", sem.getWeeklySalary());
+            System.out.printf("%.2f\n", employees.get(i).earning());
+            if (employees.get(i) instanceof SalariedEmployee){
+            //    downcasting
+                SalariedEmployee sem = (SalariedEmployee)(employees.get(i));
+              System.out.printf("weekly salary: %.2f\n", sem.getWeeklySalary());
                 
-            //}
+            }
             
-        //}
+        }
         
         
         

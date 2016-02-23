@@ -2,7 +2,7 @@
 package topic04.polymorphism.shapes;
 
 
-public class Rectangle extends Shape{
+public class Rectangle extends TwoDimensionalShape{
     
     private double length;
     private double width;
@@ -17,8 +17,14 @@ public class Rectangle extends Shape{
         return length*width;
     }
     
+    @Override
+    public  double getPerimeter(){
+        return 2*(length+width);
+    }
+    
+   
     public String toString(){
-        return super.toString()+"rectangle:  " + length +","+width;
+        return super.toString()+" rectangle:  " + length +","+width;
     }
     
 }

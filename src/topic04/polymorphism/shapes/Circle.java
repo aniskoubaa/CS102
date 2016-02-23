@@ -2,9 +2,9 @@
 package topic04.polymorphism.shapes;
 
 
-public class Circle extends Shape{
+public class Circle extends TwoDimensionalShape{
     
-    public double radius;
+    private double radius;
     
     public Circle(double radius){
         super();
@@ -15,6 +15,22 @@ public class Circle extends Shape{
         return Math.PI*Math.pow(radius, 2.0);
     }
     
+    @Override
+    public  double getPerimeter(){
+        return Math.PI*2*radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    
+    
+    
+
     public String toString(){
         return super.toString()+" circle:  " + radius;
     }
