@@ -13,6 +13,7 @@ public class Rectangle extends TwoDimensionalShape{
         this.width=width;
     }
     
+     @Override
     public double getArea(){
         return length*width;
     }
@@ -22,9 +23,11 @@ public class Rectangle extends TwoDimensionalShape{
         return 2*(length+width);
     }
     
+    
+    
    
     public String toString(){
-        return super.toString()+" rectangle:  " + length +","+width;
+        return super.toString()+" rectangle:  " + getArea();
     }
     
 }

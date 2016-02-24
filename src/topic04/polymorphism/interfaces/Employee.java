@@ -1,7 +1,9 @@
-package topic04.polymorphism.employees;
+
+package topic04.polymorphism.interfaces;
 
 
-public  abstract class Employee {
+
+public abstract class Employee implements Payable{
     
     private String firstName;
     private String lastName;
@@ -37,7 +39,6 @@ public  abstract class Employee {
         Ssn=ssn;
     }
     
-    public abstract double earning();
     
     @Override
     public String toString(){

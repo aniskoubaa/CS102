@@ -1,6 +1,7 @@
 package topic04.polymorphism.shapes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class ShapeTest {
@@ -10,7 +11,7 @@ public class ShapeTest {
         Rectangle r = new Rectangle(1.2, 3.4);
         //Shape shape = new Circle(1.0);
 
-        Shape shape2 = new Circle(2.4);
+        //Shape shape2 = new Circle(2.4);
         
         //shape.radius;
        // double x=c.radius;
@@ -31,6 +32,9 @@ public class ShapeTest {
         rectangles.add(r);
         squares.add(s);
         
+        
+        
+        
         for (Circle x : circles){
             //System.out.println(x);
         }
@@ -43,7 +47,8 @@ public class ShapeTest {
             //System.out.println(y);
         }
         
-        ArrayList<Shape> shapes = new ArrayList<Shape>();
+        ArrayList<TwoDimensionalShape> shapes = 
+                new ArrayList<TwoDimensionalShape>();
         shapes.add(r);
         //circles.add(r);
         shapes.add(c);
@@ -63,6 +68,31 @@ public class ShapeTest {
             System.out.println(counter);
                 
         }
+        
+        System.out.println("List of Shapes:"+shapes);
+        
+        System.out.println("List of Shapes After Sorting:"+shapes);
+
+        
+        ArrayList<String> strList = new ArrayList<String>();
+        strList.add("CS102");
+        strList.add("Riyadh");
+        strList.add("Age");
+        strList.add("Yellow");
+        strList.add("CS210");
+        System.out.println(strList);
+        Collections.sort(strList);
+        System.out.println(strList);
+        
+        System.out.println("max: "+Collections.max(strList));
+        System.out.println("min: "+Collections.min(strList));
+        
+        
+
+        Collections.sort(shapes);
+        
+        s.compareTo(c);
+        s.compareTo(new Square(2.0));
        
         
         

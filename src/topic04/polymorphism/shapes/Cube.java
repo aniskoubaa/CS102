@@ -5,20 +5,12 @@
  */
 package topic04.polymorphism.shapes;
 
-
 public class Cube extends ThreeDimensionalShape{
-
+    
     private double side;
     
-    public Cube() {
-    }
-
-    public double getSide() {
-        return side;
-    }
-
-    public void setSide(double side) {
-        this.side = side;
+    public Cube(){
+        super();
     }
 
     @Override
@@ -28,9 +20,18 @@ public class Cube extends ThreeDimensionalShape{
 
     @Override
     public double getPerimeter() {
-        return 12*side;
+        return 12*side; 
     }
     
+    
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
     
     
     

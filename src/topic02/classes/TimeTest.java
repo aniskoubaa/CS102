@@ -5,6 +5,9 @@
  */
 package topic02.classes;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  *
  * @author akoubaa
@@ -18,9 +21,10 @@ public class TimeTest {
         
         Time t2 = new Time();
         
-        Time t3 = new Time(3);
+        Time t3 = new Time(3,8,49);
         
         Time t4 = new Time(t1);
+        t4.setHour(15);
         
         System.out.println("t4= "+ t4.toStandardString());
         
@@ -28,7 +32,24 @@ public class TimeTest {
         System.out.println("t2= "+t2);
         System.out.println("t3= "+t3);
         System.out.println("t4= "+t4);
-    
+        
+        ArrayList<Time> times = new ArrayList<Time>();
+        times.add(t1);
+        times.add(t2);
+        times.add(t3);
+        times.add(t4);
+        times.add(new Time(3,19,43));
+        times.add(t4);
+       
+        System.out.println(times);
+        Collections.sort(times);
+        System.out.println(times);
+        
+        System.out.println(t1.compareTo(t4));
+        System.out.println(Collections.max(times));
+        System.out.println(Collections.min(times));
+       
+        
     }
     
 }

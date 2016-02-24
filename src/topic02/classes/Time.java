@@ -1,6 +1,6 @@
 package topic02.classes;
 
-public class Time {
+public class Time implements Comparable<Time>{
     
     private int hour; //0-23
     private int minute;//0-59
@@ -88,9 +88,69 @@ public class Time {
         }
         return String.format("%d:%02d:%02d %s", h, minute, second, AM_PM);
     }
+    @Override
+    public int compareTo(Time t){
+        if (this.getHour()!=t.getHour()){
+            return this.getHour()-t.getHour();
+        }else 
+            if (this.getMinute()!=t.getMinute()){
+            return this.getMinute()-t.getMinute();
+        }
+        return this.getSecond()-t.getSecond();
+        /*if (this.getHour()>t.getHour()){
+            return 1;
+        }else if (this.getHour()<t.getHour()){
+            return -1;
+        }else if (this.getMinute()>t.getMinute()){
+            return 1;
+        }else if (this.getMinute()<t.getMinute()){
+            return -1;
+        }else if (this.getSecond()>t.getSecond()){
+            return 1;
+        }else if (this.getMinute()<t.getMinute()){
+            return -1;
+        }
+        else return 0;
+        */
+    }
+    
+    
     
     public String toString(){
         return String.format("%02d:%02d:%02d", hour, minute, second);
     }
     
 }
+/*
+@Override
+    public int compareTo(Time t){
+        
+        if (this.getHour()!=t.getHour()){
+            return this.getHour()-t.getHour();
+        }else if (this.getMinute()!=t.getMinute()){
+            return this.getMinute()-t.getMinute();
+        }
+        return this.getSecond()-t.getSecond();
+        
+        /*
+        if (this.getHour()>t.getHour()){
+            return 1;
+        }else if (this.getHour()<t.getHour()){
+            return -1;
+        }
+        else
+            if (this.getMinute()>t.getMinute()){
+            return 1;
+        }else if (this.getMinute()<t.getMinute()){
+            return -1;
+        }
+        else
+            if (this.getSecond()>t.getSecond()){
+            return 1;
+        }else if (this.getSecond()<t.getSecond()){
+            return -1;
+        }
+        else return 0;
+                
+    }
+*/

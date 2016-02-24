@@ -35,6 +35,7 @@ class CommissionEmployee extends Employee {
             throw new IllegalArgumentException("Commission rate must in >=0.0 and <1.0");
     }
     
+    @Override
     public double earning(){
         return this.commissionRate*this.grossSales;
     }

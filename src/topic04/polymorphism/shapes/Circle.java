@@ -32,7 +32,7 @@ public class Circle extends TwoDimensionalShape{
     
 
     public String toString(){
-        return super.toString()+" circle:  " + radius;
+        return super.toString()+" circle:  " + + getArea();
     }
     
 }
