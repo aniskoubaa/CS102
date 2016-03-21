@@ -1,5 +1,9 @@
-package exams.quizzes.spring2016.major01.impl;
+package exams.quizzes.spring2016.major01.interfaces;
 
+import exams.quizzes.spring2016.major01.impl.DirectedEdge;
+import exams.quizzes.spring2016.major01.impl.UndirectedEdge;
+import exams.quizzes.spring2016.major01.impl.UndirectedGraph;
+import exams.quizzes.spring2016.major01.impl.Vertex;
 import exams.quizzes.spring2016.major01.interfaces.IUndirectedEdge;
 import exams.quizzes.spring2016.major01.interfaces.IUndirectedGraph;
 import exams.quizzes.spring2016.major01.interfaces.IVertex;
@@ -10,16 +14,22 @@ public class GraphTest {
         
         IUndirectedGraph graph = new UndirectedGraph();
         
+       
+        
         IVertex v0 = new Vertex(0,"V0");
         IVertex v1 = new Vertex(1,"V1");
         IVertex v2 = new Vertex(2,"V2");
         IVertex v3 = new Vertex(3,"V3");
+        
+        IEdge e = new DirectedEdge(v0,v1,2.3);
         
         /** Task 1. add vertices to the graph */
         graph.addVertex(v0);
         graph.addVertex(v1);
         graph.addVertex(v2);
         graph.addVertex(v3);
+        
+
         
         
         
