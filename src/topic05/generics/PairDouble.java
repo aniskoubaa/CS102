@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package topic05.generics;
 
 
 public class PairDouble {
     
-    private Double first;
-    private Double second;
+    Double first;
+    Double second;
 
     public PairDouble(Double first, Double second) {
         this.first = first;
@@ -31,5 +27,10 @@ public class PairDouble {
     public void setSecond(Double second) {
         this.second = second;
     }
+    
+    public String toString(){
+        return String.format("(%s, %s)", first, second);
+    }
+    
     
 }

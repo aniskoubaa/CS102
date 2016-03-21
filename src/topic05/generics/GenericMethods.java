@@ -1,27 +1,45 @@
 package topic05.generics;
 
+import topic05.generics.*;
+
 public class GenericMethods {
     
-/*
+    /*
     public static void printArray(Integer [] array){
         for (int i=0; i<array.length;i++){
-            System.out.println(array[i]);
+            System.out.print(array[i]);
         }
+        System.out.println("");
         
     }
     
-    
+    public static void printArray(Double [] array){
+        for (int i=0; i<array.length;i++){
+            System.out.print(array[i]);
+        }
+        System.out.println("");        
+    }   
     
     public static void printArray(Character [] array){
         for (int i=0; i<array.length;i++){
-            System.out.println(array[i]);
+            System.out.print(array[i]);
         }
+        System.out.println("");
+        
+    }
+    */
+    
+    public static <T> void printArray(T [] array){
+        for (int i=0; i<array.length;i++){
+            System.out.print(array[i]);
+        }
+        System.out.println("");
         
     }
     
-    */
+
     
-    
+    /*
     public static Integer max(Integer x1, Integer x2, Integer x3){
        Integer max=x1;
         if (max<x2)
@@ -38,9 +56,9 @@ public class GenericMethods {
         if (max<x3)
             max=x3;
            return max;
-    }
+    }*/
     
-    public static <T extends Comparable <T>> T max(T x1, T x2, T x3){
+    public static <T extends Comparable<T>> T max(T x1, T x2, T x3){
        T max=x1;
         if (max.compareTo(x2)<0)
             max=x2;
@@ -49,15 +67,9 @@ public class GenericMethods {
            return max;
     }
     
-    public static <T> void printArray(T [] array){
-        for (int i=0; i<array.length;i++){
-            System.out.println(array[i]);
-        } 
-        
-        for (T t: array){
-            System.out.println(t);
-        }
-    }
+    
+    
+    
     
     
         
@@ -74,7 +86,7 @@ public class GenericMethods {
         
         String x = "ss";
         String y = "RE";
-        String z= "wer";
+        String z= "aer";
         
         System.out.println(max(10.2, 4.3,5.9));
         
@@ -83,7 +95,7 @@ public class GenericMethods {
         Student s1 = new Student();
         Student s2 = new Student();
         Student s3 = new Student();
-        s1.setId("14");
+        s1.setId("11");
         s2.setId("12");
         s3.setId("13");
         

@@ -1,5 +1,7 @@
 package topic05.generics;
 
+import topic05.generics.*;
+
 public class Student implements Comparable<Student>{
     
     //attributes of the class students
@@ -90,7 +92,7 @@ public class Student implements Comparable<Student>{
                 this.mobilePhone);
     }
 
-    @Override
+  
     public int compareTo(Student s) {
         return this.id.compareTo(s.id);
     }

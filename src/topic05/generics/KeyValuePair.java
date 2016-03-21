@@ -1,5 +1,5 @@
 
-package topics05.genericclasses;
+package topic05.generics;
 
 
 public class KeyValuePair <K extends Comparable <K>,V> {

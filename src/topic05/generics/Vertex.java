@@ -1,8 +1,9 @@
 package topic05.generics;
+import topic05.generics.*;
 import exams.quizzes.spring2016.major01.impl.*;
 import exams.quizzes.spring2016.major01.interfaces.IVertex;
 
-public class Vertex implements IVertex{
+public class Vertex implements IVertex, Comparable<Vertex>{
 
     private int id;
     private String data;
@@ -56,6 +57,11 @@ public class Vertex implements IVertex{
     
     public String toString(){
         return String.format("%s", data);
+    }
+
+    @Override
+    public int compareTo(Vertex o) {
+        return this.getID()-o.getID();
     }
 
 }
