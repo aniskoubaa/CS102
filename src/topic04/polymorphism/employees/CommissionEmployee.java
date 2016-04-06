@@ -1,6 +1,6 @@
 package topic04.polymorphism.employees;
 
-class CommissionEmployee extends Employee {
+public class CommissionEmployee extends Employee {
 
     private double grossSales;
     private double commissionRate;

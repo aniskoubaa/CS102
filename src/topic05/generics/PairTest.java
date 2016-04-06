@@ -9,13 +9,18 @@ public class PairTest {
     public static void main(String []args){
         
         Pair <Integer> pair = new Pair<Integer>();
+        pair.setFirst(1);
+        pair.setSecond(2);
         
         //PairDouble paird = new PairDouble(1.2, 2.4);
         
         Pair<Double> pairdouble = new Pair<Double>(1.2, 3.5);
         //ArrayList <Double> l;
+        pairdouble.setFirst(1.0);
         
-        Pair<Student> studentPair = new Pair<Student>();
+        Pair <Student> studentPair = new Pair<Student>();
+        studentPair.setFirst(new Student());
+        //studentPair.setFirst(1);
         
         
         Pair<Vertex> edge = new Pair<Vertex> ();

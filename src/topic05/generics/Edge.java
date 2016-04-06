@@ -6,7 +6,7 @@ public class Edge {
     
     //Vertex first;
     //Vertex second;
-    //Pair <Vertex> edge;
+    Pair <Vertex> edge;
     
     
 }

@@ -1,41 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package exams.previous.quizzes.fall2015.quiz3;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-import java.util.Set;
 
-public class WaitingClientQueue 
-implements Queuable{
-    
-    private ArrayList<Client> waitingQueue; 
 
-    public WaitingClientQueue(ArrayList<Client> waitingQueue) {
+public class WaitingTaskQueue implements Queuable{
+  
+    private ArrayList<Task> waitingQueue; 
+
+    public WaitingTaskQueue(ArrayList<Task> waitingQueue) {
         this.waitingQueue = waitingQueue;
-    }public WaitingClientQueue() {
-        this.waitingQueue = new ArrayList<Client>();
+    }public WaitingTaskQueue() {
+        this.waitingQueue = new ArrayList<Task>();
     }
     
     
 
-    public ArrayList<Client> getWaitingQueue() {
+    public ArrayList<Task> getWaitingQueue() {
         return waitingQueue;
     }
 
-    public void setWaitingQueue(ArrayList<Client> waitingQueue) {
+    public void setWaitingQueue(ArrayList<Task> waitingQueue) {
         this.waitingQueue = waitingQueue;
     }
     
     @Override
     public void enqueue(Object o){
-        if (o instanceof Client)
-        this.waitingQueue.add((Client)o);
+        if (o instanceof Task)
+        this.waitingQueue.add((Task)o);
+        
         //Collections.sort(waitingQueue);
     }
     
     @Override
     public Object dequeue(){
-       Client highestPriorityClient = 
+       Task highestPriorityClient = 
                Collections.max(waitingQueue);
         System.out.println(highestPriorityClient); 
        return this.waitingQueue.remove(highestPriorityClient);  
@@ -50,4 +54,5 @@ implements Queuable{
     public String toString(){
         return String.format("%s",waitingQueue);
     }
+    
 }

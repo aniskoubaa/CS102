@@ -2,7 +2,7 @@
 package topic05.generics;
 
 
-public class Pair <T extends Comparable <T>>{
+public class Pair <T extends Comparable <T>> {
     
     T first;
     T second;

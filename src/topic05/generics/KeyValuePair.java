@@ -2,7 +2,7 @@
 package topic05.generics;
 
 
-public class KeyValuePair <K extends Comparable <K>,V> {
+public class KeyValuePair <K extends Comparable<K>,V> {
     
     private K key;
     private V value;   

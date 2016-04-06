@@ -1,6 +1,7 @@
 package exams.previous.quizzes.fall2015.quiz3;
 
-public class Task implements QueuableObject, Comparable<Task>{
+public class Task implements 
+        QueuableObject, Comparable<Task>{
     
     private int priority;
     private int id;
