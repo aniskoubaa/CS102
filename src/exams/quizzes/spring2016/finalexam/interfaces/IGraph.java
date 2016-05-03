@@ -1,6 +1,5 @@
 package exams.quizzes.spring2016.finalexam.interfaces;
 
-import exams.quizzes.spring2016.major02solution.interfaces.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;

@@ -1,6 +1,7 @@
 package exams.quizzes.spring2016.finalexam.impl;
-import exams.quizzes.spring2016.major02solution.impl.*;
-import exams.quizzes.spring2016.major02.interfaces.EdgeFactory;
+
+import exams.quizzes.spring2016.finalexam.interfaces.EdgeFactory;
+
 
 
 /** question 01 **/

@@ -1,7 +1,7 @@
 
 package exams.quizzes.spring2016.finalexam.impl;
 
-import exams.quizzes.spring2016.major02solution.impl.*;
+
 import java.util.Set;
 import java.util.TreeSet;
 

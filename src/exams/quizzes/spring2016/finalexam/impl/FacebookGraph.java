@@ -1,9 +1,9 @@
 package exams.quizzes.spring2016.finalexam.impl;
 
-import exams.quizzes.spring2016.major02solution.impl.*;
-import exams.quizzes.spring2016.major02.interfaces.EdgeFactory;
-import exams.quizzes.spring2016.major02.interfaces.IGraph;
-import exams.quizzes.spring2016.major02.interfaces.VertexFactory;
+
+import exams.quizzes.spring2016.finalexam.interfaces.EdgeFactory;
+import exams.quizzes.spring2016.finalexam.interfaces.IGraph;
+import exams.quizzes.spring2016.finalexam.interfaces.VertexFactory;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;

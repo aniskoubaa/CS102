@@ -1,8 +1,9 @@
 package exams.quizzes.spring2016.finalexam.impl;
 
-import exams.quizzes.spring2016.major02solution.impl.*;
-import exams.quizzes.spring2016.major02.interfaces.IVertex;
-import exams.quizzes.spring2016.major02.interfaces.VertexFactory;
+import exams.quizzes.spring2016.finalexam.interfaces.IVertex;
+import exams.quizzes.spring2016.finalexam.interfaces.VertexFactory;
+
+
 
 public class FacebookUserFactory implements VertexFactory{
 

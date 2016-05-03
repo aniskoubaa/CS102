@@ -1,8 +1,8 @@
 package exams.quizzes.spring2016.finalexam.impl;
 
-import exams.quizzes.spring2016.major02solution.impl.*;
-import exams.quizzes.spring2016.major02.interfaces.IEdge;
-import exams.quizzes.spring2016.major02.interfaces.IVertex;
+import exams.quizzes.spring2016.finalexam.interfaces.IEdge;
+import exams.quizzes.spring2016.finalexam.interfaces.IVertex;
+
 
 
 public class FriendshipRelation implements IEdge{
