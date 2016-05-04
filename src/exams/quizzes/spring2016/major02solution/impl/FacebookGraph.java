@@ -205,7 +205,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     
     public void loadGraph(String fileName) throws FileNotFoundException {
         
-        Scanner fileInput = new Scanner(new File("fbgraph.txt"));
+        Scanner fileInput = new Scanner(new File(fileName));
         
         //read first line
         int nbUsers = Integer.parseInt(fileInput.nextLine());

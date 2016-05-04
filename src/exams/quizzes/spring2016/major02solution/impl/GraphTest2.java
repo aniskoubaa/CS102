@@ -15,7 +15,8 @@ public class GraphTest2 {
     public static void main(String [] args) throws FileNotFoundException{
         
         FacebookGraph fbg= FacebookGraph.getInstance();
-        fbg.loadGraph("fbgraph.txt");
+        System.out.println(fbg);
+        fbg.loadGraph("dir/fbgraph.txt");
         System.out.println(fbg);
         
         
