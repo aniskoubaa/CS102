@@ -9,7 +9,7 @@ import exams.quizzes.spring2016.finalexam.interfaces.IVertex;
 
 
 
-public class FacebookUser implements IVertex{
+public class FacebookUser implements IVertex,  Comparable<FacebookUser>{
 
     private int id;
     private String name;
@@ -71,6 +71,11 @@ public class FacebookUser implements IVertex{
     
     public String toString(){
         return id+";"+name+";"+email;
+    }
+
+    @Override
+    public int compareTo(FacebookUser u) {
+        return this.getName().compareTo(u.name);
     }
     
 }

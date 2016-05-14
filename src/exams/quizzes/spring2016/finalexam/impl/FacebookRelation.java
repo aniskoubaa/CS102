@@ -5,19 +5,19 @@ import exams.quizzes.spring2016.finalexam.interfaces.IVertex;
 
 
 
-public class FriendshipRelation implements IEdge{
+public class FacebookRelation implements IEdge{
 
     
     protected FacebookUser sourceUser;
     protected FacebookUser targetUser;
     protected Date date;
     
-    public FriendshipRelation(FacebookUser s, FacebookUser t){
+    public FacebookRelation(FacebookUser s, FacebookUser t){
         sourceUser=s;
         targetUser=t;
     }
     
-    public FriendshipRelation(FacebookUser s, FacebookUser t, Date d){
+    public FacebookRelation(FacebookUser s, FacebookUser t, Date d){
         sourceUser=s;
         targetUser=t;
         date=d;

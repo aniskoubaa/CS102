@@ -6,15 +6,15 @@ import exams.quizzes.spring2016.finalexam.interfaces.EdgeFactory;
 
 /** question 01 **/
 public class FacebookRelationFactory 
-    implements EdgeFactory <FriendshipRelation, FacebookUser>{
+    implements EdgeFactory <FacebookRelation, FacebookUser>{
 
     @Override
-    public FriendshipRelation create(FacebookUser source, FacebookUser target) {
-       return new FriendshipRelation(source, target);
+    public FacebookRelation create(FacebookUser source, FacebookUser target) {
+       return new FacebookRelation(source, target);
     }
     
-    public FriendshipRelation create(FacebookUser source, FacebookUser target, Date date) {
-       return new FriendshipRelation(source, target, date);
+    public FacebookRelation create(FacebookUser source, FacebookUser target, Date date) {
+       return new FacebookRelation(source, target, date);
     }
     
 }

@@ -4,17 +4,22 @@ package exams.quizzes.spring2016.finalexam.impl;
 import exams.quizzes.spring2016.finalexam.interfaces.EdgeFactory;
 import exams.quizzes.spring2016.finalexam.interfaces.IGraph;
 import exams.quizzes.spring2016.finalexam.interfaces.VertexFactory;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FacebookGraph 
-implements IGraph<FacebookUser, FriendshipRelation> {
+implements IGraph<FacebookUser, FacebookRelation> {
     
     private Set<FacebookUser> users=new HashSet<FacebookUser>();
-    private Set<FriendshipRelation> relations=new HashSet<FriendshipRelation>();
+    private Set<FacebookRelation> relations=new HashSet<FacebookRelation>();
 
     private FacebookRelationFactory facebookRelationFactory = new FacebookRelationFactory();
     private FacebookUserFactory facebookUserFactory = new FacebookUserFactory();
@@ -42,7 +47,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
         return getVertices();
     }
     
-    public Set<FriendshipRelation> getRelations(){
+    public Set<FacebookRelation> getRelations(){
         return getEdges();
     }
     
@@ -77,7 +82,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     }
 
     @Override
-    public Set<FriendshipRelation> getEdges() {
+    public Set<FacebookRelation> getEdges() {
         return relations;
     }
 
@@ -87,7 +92,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     }
 
     @Override
-    public void setEdges(Set<FriendshipRelation> edges) {
+    public void setEdges(Set<FacebookRelation> edges) {
         relations = edges;
     }
 
@@ -97,22 +102,22 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     }
 
     @Override
-    public void addEdge(FriendshipRelation v) {
+    public void addEdge(FacebookRelation v) {
         relations.add(v);
     }
 
     @Override
-    public FriendshipRelation addEdge(FacebookUser sourceVertex, FacebookUser targetVertex) {
-        FriendshipRelation fr = facebookRelationFactory.create(sourceVertex, targetVertex);
+    public FacebookRelation addEdge(FacebookUser sourceVertex, FacebookUser targetVertex) {
+        FacebookRelation fr = facebookRelationFactory.create(sourceVertex, targetVertex);
         relations.add(fr);
         return fr;
     }
 
     @Override
     public boolean containsEdge(FacebookUser sourceVertex, FacebookUser targetVertex) {
-        Iterator <FriendshipRelation> it = relations.iterator();
+        Iterator <FacebookRelation> it = relations.iterator();
         while (it.hasNext()){
-            FriendshipRelation fr = it.next();
+            FacebookRelation fr = it.next();
             boolean c1 = (fr.getSource().equals(sourceVertex));
             boolean c2 = (fr.getTarget().equals(targetVertex));
            
@@ -126,8 +131,8 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     public boolean areFriends(FacebookUser sourceVertex, FacebookUser targetVertex){
         return (containsEdge(sourceVertex, targetVertex)||containsEdge(targetVertex,sourceVertex));
     }
-
     
+       
 
     @Override
     public void printToFile(String fileName) {
@@ -136,7 +141,11 @@ implements IGraph<FacebookUser, FriendshipRelation> {
 
     @Override
     public void loadFromFile(String fileName) {
-        
+        try {
+            loadGraph(fileName);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(FacebookGraph.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -154,7 +163,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     public Map <Integer, String> getFriendMap(){
         Map <Integer, String> friendMap = new TreeMap<Integer, String>();
         
-        for (FriendshipRelation r : relations){
+        for (FacebookRelation r : relations){
             if (friendMap.containsKey(r.getSource().getID())){
                 String s = friendMap.get(r.getSource().getID());
                 friendMap.put(r.getSource().getID(),(s+";"+ r.getTarget().getID()));
@@ -176,7 +185,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
     public Map <Integer, Friends> getFriendsMap(){
         Map <Integer, Friends> friendMap = new TreeMap<Integer, Friends>();
         
-        for (FriendshipRelation r : relations){
+        for (FacebookRelation r : relations){
             int userID = r.getSource().getID();
             int friendID = r.getTarget().getID();
             if (friendMap.containsKey(userID)){
@@ -201,7 +210,44 @@ implements IGraph<FacebookUser, FriendshipRelation> {
         return friendMap;
     }
     
-    public void loadGraph(String fileName) {
+    public void loadGraph(String fileName) throws FileNotFoundException {
+        
+        Scanner fileInput = new Scanner(new File(fileName));
+        
+        //read first line
+        int nbUsers = Integer.parseInt(fileInput.nextLine());
+        System.out.println("nbUsers: "+nbUsers);
+        for (int i=0;i<nbUsers;i++){
+            if (fileInput.hasNext()){
+            //2;Kamal;kamal@gmail.com
+            String userLine = fileInput.nextLine();
+            String [] userInfo = userLine.split(";");
+            int id = Integer.parseInt(userInfo[0]);
+            String name = userInfo[1];
+            String email = userInfo[2];
+            FacebookUser fbu=(FacebookUser)this.facebookUserFactory.create(id, name);
+            fbu.setEmail(email);
+            this.users.add(fbu);  
+            }else return;
+        }
+        for (int i=0;i<nbUsers;i++){
+            if (fileInput.hasNext()){
+            //1:3;5;4
+            String relationLine = fileInput.nextLine();
+            //System.out.println("relationLine: "+relationLine);
+            String [] userFriends = relationLine.split(":");
+            //  System.out.println("userFriends[0]: "+userFriends[0]);
+            int userID = Integer.parseInt(userFriends[0]);
+            String [] friends = userFriends[1].split(";");
+            for (int j=0;j<friends.length;j++){
+                int friendID = Integer.parseInt(friends[j]);
+                FacebookRelation relation = 
+        (FacebookRelation) this.facebookRelationFactory.create(getUser(userID), getUser(friendID));
+                this.relations.add(relation);
+            }
+            
+            }else return;
+        }
         
     }
     
@@ -214,7 +260,7 @@ implements IGraph<FacebookUser, FriendshipRelation> {
         
         Set <Integer> idSet = getFriendMap().keySet();
         for (Integer id : idSet){
-            s= s + id+":"+getFriendMap().get(id)+"\n";
+            s= s + id+":"+getFriendsMap().get(id)+"\n";
         }
         return s;        
     }
